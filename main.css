@@ -1,0 +1,393 @@
+/*----- General Styling -----*/
+body {
+    background-color: rgb(90, 90, 90);
+}
+
+/*map styling*/
+#emap {
+    height: 300px;
+    width: 500px
+}
+#rmap {
+    height: 300px;
+    width: 500px
+}
+
+/*header styling*/
+.header {
+    background: rgb(0, 180, 180);
+    text-align: center;
+    padding: 25px;
+    border-bottom: 2px solid gray;
+}
+
+/*footer styling*/
+.footer {
+   position:absolute;
+   bottom:0;
+   width:100%; 
+   background:#6cf;
+}
+
+/*body styling*/
+h1 {
+    color: whitesmoke;
+    width: 100%;
+    font-family: verdana;
+}
+
+h2 {
+    color: rgb(0, 204, 204);
+    border-bottom: 2px solid gray;
+    width: 100%;
+    font-family: verdana;
+}
+
+h3 {
+    color: rgb(0, 204, 204);
+    width: 100%;
+    font-family: verdana;
+}
+
+h5 {
+    color: silver;
+    font-size:14px;
+    font-family: verdana;
+}
+
+/*twitter styling*/
+
+#RTweets, #ETweets {
+    color:rgb(165, 155, 155);
+    font-size:14px;
+    font-family: verdana;
+}
+    
+
+/* Allign information on the page */
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* if the screen is less than the set px maps wil lgo above and bellow eachother*/
+@media screen and (max-width: 800px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+  
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+
+
+/*weather styling*/
+#Exeter-WeatherAPI h4, #Rennes-WeatherAPI h4{
+    padding:0.2%;
+    font-size: 16px;
+    color: rgb(0, 204, 204);
+    display: inline;
+}
+  
+#Exeter-WeatherAPI, #Rennes-WeatherAPI{
+    padding: 0 0.5% 2% 0.5%;
+    font-size: 16px;
+    color: whitesmoke;
+    line-height: 2;
+    font-family: Arial;
+}
+
+
+/*overlay styling*/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(37, 37, 37, 0.9);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.overlay-content{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-height: 50%;
+    max-height: 60%;
+    min-width:70%;
+    max-width:80%;
+    background-color: #f5f3f3;
+    padding: 2%;
+    line-height: 2.4;    
+}
+
+.overlay-header{
+    line-height:0.8;
+}
+
+.overlay-text{
+    line-height: 2.3; 
+    padding-left: 5%;
+    font-family:arial;
+}
+
+
+.overlay-img{
+    min-width:500px;
+    max-height: 400px;
+    max-width: 400px;
+    max-height: 300px;
+    float:right;
+    padding-right:20px;
+}
+
+.overlay-button{
+    top:0;
+    right:0;
+    transform: translate(350%, -100%);
+    font-size: 60px;
+    font-weight: bold;
+    color: whitesmoke;
+    position: absolute;
+}
+
+.overlay-button:hover{
+    color: rgb(0, 204, 204);
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.overlay-POI{
+    font-family:Helvetica;
+    font-size:45px;
+    font-weight: bold;
+    color:navy;
+}
+
+.overlay-location, .overlay-postcode {
+    font-size:25px;
+    color:#484848;
+    font-style: italic;
+    font-weight:bold;
+
+}
+
+.overlay-postcode{
+    font-size:18px;
+}
+
+.overlay-wiki{
+    font-style: italic;
+    font-weight:bold;
+    color:#3434c7;
+}
+
+
+/*rss styling*/
+.RSS-button{
+    background-color: rgb(0, 160, 149);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%
+  }
+  
+  .RSS-button:hover {
+    background-color: rgb(0, 134, 125);
+  }
+  
+  .RSS-button:active {
+    background-color: rgb(0, 134, 125);
+    transform: translateY(3px);
+  }
+  
+  .rssfeed{
+    display:none;
+  }
+
+.rssfeed{
+    background: rgb(0, 160, 149);
+    margin: 22px 22px 22px 22px;
+    box-shadow: 4px 4px 4px 4px rgb(40, 40, 40);
+    padding: 15px 15px 15px 15px;
+  }
+  
+  city, name, country, longitude, latitude, woeid, postcode, timezone, population, density, currency, placeOfInterest,
+  poiName, type, pcity, geo_lat, geo_long, postcodep, capacity, constructed, link, sentiment, description{
+    display:block;
+    font-size:16px;
+    font-family: helvetica; 
+    color: Gainsboro;
+    line-height:1.5;
+  }
+  
+  city {
+      padding-top: 20px;
+      padding-left: 5%;
+      width: 100%; 
+      font-size: 20p;
+  } 
+  
+  placeOfInterest{   
+      display: block;
+      padding-top: 10px;
+      padding-left: 5%;
+      width: 100%; 
+
+  } 
+  name{
+    font-size: 75px;
+     color: mintcream;
+}
+
+country{
+    color:dimgray;
+    font-size:35px;
+    padding-left: 110px;
+    line-height:2;
+}
+
+longitude:before{
+  content: 'Coordinates: ';
+  color:dimgray;
+}
+
+longitude{
+    display:inline;
+}
+
+latitude:before{
+  content: ' , '
+}
+
+latitude{
+    display:inline;
+}
+    
+woeid:before{
+    content: 'WOEID: ';
+    color:dimgray;
+}
+
+City postcode:before{
+    content: 'postcode: ';
+    color:dimgray;
+}
+
+timezone:before{
+    content: 'Timezone: ';
+    color:dimgray;
+}
+
+population:before{
+    content: 'Population: ';
+    color:dimgray;
+}
+
+density:before{
+    content: 'Density: ';
+    color:dimgray;
+}
+
+Currency:before{
+    content: 'Currency: ';
+    color:dimgray;
+}
+
+type:before{
+    content: 'Type: ';
+    color:dimgray;
+}
+
+pcity:before{
+    content: 'City: ';
+    color:dimgray;
+}
+
+geo_long:before{
+    content: 'Coordinates of POI: ';
+    color:dimgray;
+}
+
+geo_long{
+    display:inline;
+}
+
+geo_lat{
+
+    display:inline;
+}
+
+geo_lat:before{
+  content: ' , '
+}
+
+postcodep:before{
+    content: 'POI Postcode: ';
+    color:dimgray;
+}
+
+capacity:before{
+    content: 'Capacity: ';
+    color:dimgray;
+}
+
+constructed:before{
+    content: 'Year of Construction: ';
+    color:dimgray;
+}
+
+link:before{
+    content: 'Link: ';
+    color:dimgray;
+}
+
+sentiment:before{
+    content: 'Sentiment: ';
+    color:dimgray;
+}
+
+description:before{
+    content: 'Description: ';
+    color:dimgray;
+}
+
+poiName{
+    font-size:25px;
+    line-height:1.85;
+    color:navy;
+}
+
+/*end of styling sheet*/

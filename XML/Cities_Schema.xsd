@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:element name="Cities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="City"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="City">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="Country"/>
+        <xs:element ref="Geo_location_lat"/>
+        <xs:element ref="Geo_location_long"/>
+        <xs:element ref="Name"/>
+        <xs:element ref="Postcode"/>
+        <xs:element ref="Currency"/>
+        <xs:element ref="Photos"/>
+        <xs:element ref="Places_of_interest"/>
+        <xs:element ref="Population_density"/>
+        <xs:element ref="Population_size"/>
+        <xs:element ref="Time_zone"/>
+        <xs:element ref="WOEID"/>
+      </xs:choice>
+      <xs:attribute name="City_ID" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Currency" type="xs:string"/>
+  <xs:element name="Photos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Photo"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Photo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name"/>
+        <xs:element ref="Place_of_interest"/>
+        <xs:element ref="Image_filepath"/>
+      </xs:sequence>
+      <xs:attribute name="Photo_ID" use="required" type="xs:integer"/>
+      <xs:attribute name="Place_of_interest_City_City_ID" use="required" type="xs:integer"/>
+      <xs:attribute name="Place_of_interest_Place_of_interest_ID" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Image_filepath" type="xs:string"/>
+  <xs:element name="Places_of_interest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Place_of_interest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Population_density" type="xs:integer"/>
+  <xs:element name="Population_size" type="xs:integer"/>
+  <xs:element name="Time_zone" type="xs:string"/>
+  <xs:element name="WOEID" type="xs:integer"/>
+  <xs:element name="Name" type="xs:string"/>
+  <xs:element name="Place_of_interest">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="City"/>
+        <xs:element ref="Country"/>
+        <xs:element ref="Geo_location_lat"/>
+        <xs:element ref="Geo_location_long"/>
+        <xs:element ref="Name"/>
+        <xs:element ref="Postcode"/>
+        <xs:element ref="Capacity"/>
+        <xs:element ref="City_WOEID"/>
+        <xs:element ref="Type"/>
+        <xs:element ref="Year_of_construction"/>
+      </xs:choice>
+      <xs:attribute name="City_City_ID" type="xs:integer"/>
+      <xs:attribute name="Place_of_interest_ID" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Capacity" type="xs:decimal" nillable="true"/>
+  <xs:element name="City_WOEID" type="xs:integer"/>
+  <xs:element name="Type" type="xs:NCName"/>
+  <xs:element name="Year_of_construction" type="xs:decimal" nillable="true"/>
+  <xs:element name="Geo_location_long" type="xs:decimal"/>
+  <xs:element name="Country" type="xs:NCName"/>
+  <xs:element name="Geo_location_lat" type="xs:decimal"/>
+  <xs:element name="Postcode" type="xs:string"/>
+</xs:schema>

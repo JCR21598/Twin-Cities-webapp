@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<individual_metafile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="http://www.cems.uwe.ac.uk/~p-chatterjee/2018-19/modules/dsa/assignment/individual_handin_schema.xsd">  
+    <group id="H"/>
+    <student id="17026432"/>
+    <!--- my individual component -->
+    <component type="Comments Widget">
+        <description>The Twitter Widget displays tweets from each of the twin cities by searching the twitter api
+        by geo-coordinates. In addition to the twitter feed from each city, the twitter widget performs sentiment
+        analysis on each of the points of interest on the map. When each point of interests is clicked on, the latest
+        tweet from that location is displayed, and if moused over, will just display the recorded sentiment analysis retrieved from
+        the database.
+        </description>
+        <problems> To achieve the behavior described, a combination of several technologies was required. The core technology
+        underpinning the Twitter Widget is retrieving tweets from the twitter api. These tweets have to be transformed from
+        the Json object that they are returned as in order to display them in HTML. These tweets then have to be analysed
+        to determine there sentiment. Another problem, that I sought to address when creating this widget is one of overall
+        performance for the component. Because the widget relies on calls to an external api, without considerations for performance
+        the loading times and network usage of the website can be detrimentally affected.
+        </problems>
+        <solutions>
+        I implemented the core functionality of the widget by using php on the web-server to retrieve the tweets as per 
+        my search requirements. I leveraged a simple twitter wrapper created by James Malison under MIT license to perform 
+        the Twitter Authentication, and return the Json of the tweets. I then used my own php script to format the contents 
+        of the returned tweets into HTML. To prevent the latency of the twitter API affecting the loading times of the website
+        I called my PHP functionality with an AJAX request from the main page. I styled the tweets in the main widget for each
+        of the cities using CSS in the main style sheet.
+
+        To perform the sentiment analysis, I used two datasets created by Finn Årup Nielsen and distributed under an open source 
+        license. The dataset contains a list of value matched words, and by using php to compare the contents of each tweet
+        with the AFFIN dictionary, I was able to obtain a sentiment value for each of the tweets. The performance of the dataset
+        for twitter sentiment analysis is well regarded, and although I haven't compared the results with other techniques, 
+        I am confident that the analysis is valid and useful. 
+
+        I used MYSQL to cache the values returned from the sentiment analysis to the database, both to provide data persistence 
+        for each of the points of interest, and to improve the speed the results are displayed on mouse-over of each of the 
+        map icons.
+        </solutions>
+        <hours_effort>30</hours_effort>
+
+        <!-- This should be an URL to the working component - maybe part of the base page -->
+        <base_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/index.php</base_url>
+        <technologies>
+            <tech>php</tech>
+            <tech>sql</tech>
+            <tech>javascript</tech>
+            <tech>html5</tech>
+            <tech>css</tech>
+        </technologies>
+        <source_files>
+            
+            <file>
+                <name>ExeterTwitter.php</name>
+                <purpose>fetch twitter feed for Exeter</purpose>
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/twitter/ExeterTwitter.phps</source_url>
+            </file>
+            <file>
+                <name>RennesTwitter.php</name>
+                <purpose>fetch twitter feed for Rennes</purpose>
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/twitter/RennesTwitter.phps</source_url>
+            </file>
+            <file>
+                <name>markerTweet.php</name>
+                <purpose>get tweets and sentiment for markers</purpose>
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/twitter/markerTweet.phps</source_url>
+            </file>
+            <file>
+                <name>SentimentAnalysis.php</name>
+                <purpose>sentiment analysis</purpose>
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/twitter/SentimentAnalysis.phps</source_url>
+            </file>
+                        
+        </source_files>
+    </component>
+    <individual_comment>Implementing the comments feed using the twitter API was an interesting excercise in 
+        API usage, aswell as an opportunity to practice php, mysql, javascripting, css, and html. Working with
+        the twitter API initially presented a challange as Twitters 2.0 API uses a more complex authentication
+        procedure (perhaps in an attempt to better control what has become a politically influential eco system).
+        By using open sourced tools, however, I was able to overcome this challenge, and successfully create a twitter
+        feed that follows the geocoded activity of each of the cities. Performing Sentiment anaylis was particularly 
+        interesting, and although the technique that I used was primitive compared to more advance machine learning
+        approaches, it introduced me to techniques used to analyse data from APIs. Futher work could
+        expand on these concepts, and clearly valuable lessons to be learned from the 
+        analysis of free data.
+    </individual_comment>
+   
+</individual_metafile>

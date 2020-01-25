@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Joseph Thomas-Williams
+ID: 16024424
+XML doc for twin cities data
+Cities: Exeter, England and Rennes, France
+-->
+<Cities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Cities_Schema.xsd">
+    
+    <City City_ID='1'>
+        <Name>Exeter</Name>
+        <Country>England</Country>
+        <Geo_location_long>-3.5339</Geo_location_long>
+        <Geo_location_lat>50.7184</Geo_location_lat>
+        <WOEID>19792</WOEID>
+        <Postcode>EX</Postcode>
+        <Time_zone>GMT/BST</Time_zone>
+        <Population_size>128900</Population_size>
+        <Population_density>2700</Population_density>
+        <Currency>Pound Sterling</Currency>
+        
+        <Places_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='1' City_City_ID='1'>
+                <Name>Exeter Cathedral</Name>
+                <Type>Cathedral</Type>
+                <City>Exeter</City>
+                <Country>England</Country>
+                <Geo_location_long>-3.5299</Geo_location_long>
+                <Geo_location_lat>50.7225</Geo_location_lat>
+                <City_WOEID>19792</City_WOEID>
+                <Postcode>EX1 1HS</Postcode>
+                <Capacity>1000</Capacity>
+                <Year_of_construction>1400</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='2' City_City_ID='1'>
+                <Name>Bury Meadow Park</Name>
+                <Type>Park</Type>
+                <City>Exeter</City>
+                <Country>England</Country>
+                <Geo_location_long>-3.5360</Geo_location_long>
+                <Geo_location_lat>50.7284</Geo_location_lat>
+                <City_WOEID>19792</City_WOEID>
+                <Postcode>EX4 4HH</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction>1850</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='3' City_City_ID='1'>
+                <Name>Harry's Restaurant</Name>
+                <Type>Restaurant</Type>
+                <City>Exeter</City>
+                <Country>England</Country>
+                <Geo_location_long>-3.5264</Geo_location_long>
+                <Geo_location_lat>50.7281</Geo_location_lat>
+                <City_WOEID>19792</City_WOEID>
+                <Postcode>EX4 6AP</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction>1993</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='4' City_City_ID='1'>
+                <Name>The Hole In The Wall</Name>
+                <Type>Bar</Type>
+                <City>Exeter</City>
+                <Country>England</Country>
+                <Geo_location_long>-3.5291</Geo_location_long>
+                <Geo_location_lat>50.7255</Geo_location_lat>
+                <City_WOEID>19792</City_WOEID>
+                <Postcode>EX4 3PX</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction>1964</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='5' City_City_ID='1'>
+                <Name>Tea On The Green</Name>
+                <Type>Restaurant</Type>
+                <City>Exeter</City>
+                <Country>England</Country>
+                <Geo_location_long>-3.5299</Geo_location_long>
+                <Geo_location_lat>50.7233</Geo_location_lat>
+                <City_WOEID>19792</City_WOEID>
+                <Postcode>EX1 1EZ</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction>2009</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='6' City_City_ID='1'>
+                <Name>Royal Albert Memorial Museum</Name>
+                <Type>Museum</Type>
+                <City>Exeter</City>
+                <Country>England</Country>
+                <Geo_location_long>-3.5322</Geo_location_long>
+                <Geo_location_lat>50.7250</Geo_location_lat>
+                <City_WOEID>19792</City_WOEID>
+                <Postcode>EX4 3RX</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction>1868</Year_of_construction>
+            </Place_of_interest>
+            
+        </Places_of_interest>
+        
+        <Photos>
+            
+            <Photo Photo_ID='1' Place_of_interest_Place_of_interest_ID='1' Place_of_interest_City_City_ID='1'>
+                <Name>Exeter Cathedral</Name>
+                <Place_of_interest>Exeter Cathedral</Place_of_interest>
+                <Image_filepath>photos/1.jpg</Image_filepath>
+            </Photo> 
+            
+            <Photo Photo_ID='2' Place_of_interest_Place_of_interest_ID='2' Place_of_interest_City_City_ID='1'>
+                <Name>Bury Meadow Park</Name>
+                <Place_of_interest>Bury Meadow Park</Place_of_interest>
+                <Image_filepath>photos/2.jpg</Image_filepath>
+            </Photo>
+            
+            <Photo Photo_ID='3' Place_of_interest_Place_of_interest_ID='3' Place_of_interest_City_City_ID='1'>
+                <Name>Harry's Restaurant</Name>
+                <Place_of_interest>Harry's Restaurant</Place_of_interest>
+                <Image_filepath>photos/3.jpg</Image_filepath>
+            </Photo>
+            
+            <Photo Photo_ID='4' Place_of_interest_Place_of_interest_ID='4' Place_of_interest_City_City_ID='1'>
+                <Name>The Hole In The Wall</Name>
+                <Place_of_interest>The Hole In The Wall</Place_of_interest>
+                <Image_filepath>photos/4.jpg</Image_filepath>
+            </Photo>
+            
+            <Photo Photo_ID='5' Place_of_interest_Place_of_interest_ID='5' Place_of_interest_City_City_ID='1'>
+                <Name>Tea On The Green</Name>
+                <Place_of_interest>Tea On The Green</Place_of_interest>
+                <Image_filepath>photos/5.jpg</Image_filepath>
+            </Photo>
+            
+            <Photo Photo_ID='6' Place_of_interest_Place_of_interest_ID='6' Place_of_interest_City_City_ID='1'>
+                <Name>Royal Albert Memorial Museum</Name>
+                <Place_of_interest>Royal Albert Memorial Museum</Place_of_interest>
+                <Image_filepath>photos/6.jpg</Image_filepath>
+            </Photo>
+            
+        </Photos>
+        
+    </City>
+    
+    <City City_ID='2'>
+        <Name>Rennes</Name>
+        <Country>France</Country>
+        <Geo_location_long>-1.6778</Geo_location_long>
+        <Geo_location_lat>48.1173</Geo_location_lat>
+        <WOEID>619163</WOEID>
+        <Postcode>35000/35200/35700</Postcode>
+        <Time_zone>CET/CEST</Time_zone>
+        <Population_size>215366</Population_size>
+        <Population_density>4300</Population_density>
+        <Currency>Euro</Currency>
+        
+        <Places_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='7' City_City_ID='2'>
+                <Name>Rennes Cathedral</Name>
+                <Type>Cathedral</Type>
+                <City>Rennes</City>
+                <Country>France</Country>
+                <Geo_location_long>-1.6839</Geo_location_long>
+                <Geo_location_lat>48.1116</Geo_location_lat>
+                <City_WOEID>619163</City_WOEID>
+                <Postcode>35000</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction>1845</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='8' City_City_ID='2'>
+                <Name>Parc du Thabor</Name>
+                <Type>Park</Type>
+                <City>Rennes</City>
+                <Country>France</Country>
+                <Geo_location_long>-1.6695</Geo_location_long>
+                <Geo_location_lat>48.1144</Geo_location_lat>
+                <City_WOEID>619163</City_WOEID>
+                <Postcode>35000</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction xsi:nil='true'></Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='9' City_City_ID='2'>
+                <Name>Museum of Fine Arts of Rennes</Name>
+                <Type>Museum</Type>
+                <City>Rennes</City>
+                <Country>France</Country>
+                <Geo_location_long>-1.6750</Geo_location_long>
+                <Geo_location_lat>48.1096</Geo_location_lat>
+                <City_WOEID>619163</City_WOEID>
+                <Postcode>35000</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction>1794</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='10' City_City_ID='2'>
+                <Name>Roazhon Park</Name>
+                <Type>Stadium</Type>
+                <City>Rennes</City>
+                <Country>France</Country>
+                <Geo_location_long>-1.7129</Geo_location_long>
+                <Geo_location_lat>48.1075</Geo_location_lat>
+                <City_WOEID>619163</City_WOEID>
+                <Postcode>35000</Postcode>
+                <Capacity>29778</Capacity>
+                <Year_of_construction>1912</Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='11' City_City_ID='2'>
+                <Name>Le Grill</Name>
+                <Type>Restaurant</Type>
+                <City>Rennes</City>
+                <Country>France</Country>
+                <Geo_location_long>-1.6828</Geo_location_long>
+                <Geo_location_lat>48.1085</Geo_location_lat>
+                <City_WOEID>619163</City_WOEID>
+                <Postcode>35000</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction xsi:nil='true'></Year_of_construction>
+            </Place_of_interest>
+            
+            <Place_of_interest Place_of_interest_ID='12' City_City_ID='2'>
+                <Name>Speakeasy Bar</Name>
+                <Type>Bar</Type>
+                <City>Rennes</City>
+                <Country>France</Country>
+                <Geo_location_long>-1.6723</Geo_location_long>
+                <Geo_location_lat>48.1055</Geo_location_lat>
+                <City_WOEID>619163</City_WOEID>
+                <Postcode>35000</Postcode>
+                <Capacity xsi:nil='true'></Capacity>
+                <Year_of_construction xsi:nil='true'></Year_of_construction>
+            </Place_of_interest>
+            
+        </Places_of_interest>
+        
+        <Photos>
+            
+            <Photo Photo_ID='7' Place_of_interest_Place_of_interest_ID='7' Place_of_interest_City_City_ID='2'>
+                <Name>Rennes Cathedral</Name>
+                <Place_of_interest>Rennes Cathedral</Place_of_interest>
+                <Image_filepath>photos/7.jpg</Image_filepath>
+            </Photo> 
+            
+            <Photo Photo_ID='8' Place_of_interest_Place_of_interest_ID='8' Place_of_interest_City_City_ID='2'>
+                <Name>Parc du Thabor</Name>
+                <Place_of_interest>Parc du Thabor</Place_of_interest>
+                <Image_filepath>photos/8.jpg</Image_filepath>
+            </Photo> 
+            
+            <Photo Photo_ID='9' Place_of_interest_Place_of_interest_ID='9' Place_of_interest_City_City_ID='2'>
+                <Name>Museum of Fine Arts of Rennes</Name>
+                <Place_of_interest>Museum of Fine Arts of Rennes</Place_of_interest>
+                <Image_filepath>photos/9.jpg</Image_filepath>
+            </Photo> 
+            
+            <Photo Photo_ID='10' Place_of_interest_Place_of_interest_ID='10' Place_of_interest_City_City_ID='2'>
+                <Name>Roazhon Park</Name>
+                <Place_of_interest>Roazhon Park</Place_of_interest>
+                <Image_filepath>photos/10.jpg</Image_filepath>
+            </Photo>
+            
+            <Photo Photo_ID='11' Place_of_interest_Place_of_interest_ID='11' Place_of_interest_City_City_ID='2'>
+                <Name>Le Grill</Name>
+                <Place_of_interest>Le Grill</Place_of_interest>
+                <Image_filepath>photos/11.jpg</Image_filepath>
+            </Photo>
+            
+            <Photo Photo_ID='12' Place_of_interest_Place_of_interest_ID='12' Place_of_interest_City_City_ID='2'>
+                <Name>Speakeasy Bar</Name>
+                <Place_of_interest>Speakeasy Bar</Place_of_interest>
+                <Image_filepath>photos/12.jpg</Image_filepath>
+            </Photo>
+            
+        </Photos>
+        
+    </City>
+    
+</Cities>

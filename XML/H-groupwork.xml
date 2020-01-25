@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<group_metafile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="http://www.cems.uwe.ac.uk/~p-chatterjee/2018-19/modules/dsa/assignment/group_handin_schema.xsd">
+    <!-- This file is an example of a valid group metadata file. 
+    Use this example file as a template and fill with your own data 
+    validating as you go along using Oxygen or some other schema aware editor -->
+
+    <!-- The following is the assignment metadata (DO NOT CHANGE) -->
+    <module id="UFCFV4-30-2" acronymn="DSA">
+        <title>Data Schemas &amp; Applications</title>
+        <year>2018-19</year>
+        <hand_in>2019-03-14</hand_in>
+        <spec_url>http://www.cems.uwe.ac.uk/~p-chatterjee/2018-19/modules/dsa/assignment/</spec_url>
+    </module>
+    <!-- end of metadata section -->
+
+    <!-- Group Section -->
+    <group id="H">
+        <member id="16024424" name="Joseph Thomas-Williams"/>
+        <member id="17026432" name="Trent Meier"/>
+        <member id="15020942" name="Sam Kirk"/>
+        <member id="16020551" name="Juan Rodriguez"/>
+        <workshop>
+            <daytime>Wednesday 11:00</daytime>
+            <tutor>PC</tutor>
+            <tutor>GW</tutor>
+        </workshop>
+        <!-- Each student should have contributed to one or more components -->
+        <component type="Database Design">
+            <contributor id="16024424"/>
+            <!-- the following text fields allow for between 80 and 5000 characters -->
+            <description> For the database design, I wrote up a conceptual ER model in Lucid Chart. 
+                This shows entities for cities, places of interest and photos. I then made a more
+                complex model in mysql workbench which includes the primary and foreign keys as 
+                well as the types for each attribute. </description>
+            <problems> I wasn't sure if the relationship between entities should be identifying or
+                non-identifying. </problems>
+            <solutions> I did some research online and found that a non-identifying relationship 
+                is used when the child can be assigned to various parent entities, for instance
+                a book which can be taken out of a library by multiple people. An identifying 
+                relationship is used when the child is specifically linked to the parent. For
+                an identifying relationship, the foreign keys of the child, which link to the 
+                parent, are included in the primary key of the child. Therefore, it is my 
+                understanding that an identifying relationship is the correct relationship to 
+                use to link a city and a place of interest in that city. </solutions>
+            <!-- integer required between 1 and 120 -->
+            <hours_effort>4</hours_effort>
+        </component>
+        <component type="Database Implementation">
+            <contributor id="16024424"/>
+            <description> To implement and populate the database, I forward engineered the 
+                logical model in mysql workbench to an sql file. I then used insert into 
+                statements in sql to add the correct data. I imported the sql file in phpmyadmin 
+                in order to populate the database. </description>
+            <problems> We do not have permission to create a new database on the UWE systems. This
+                caused errors to occur when importing the sql file to phpmyadmin. </problems>
+            <solutions> To solve this, I found the name of the database already assigned to my server
+                on the UWE systems. I deleted the create database statement and added the new database
+                name to the use statement. This way, all of the tables added in the sql file will be 
+                added to my database on the UWE system, without having to create a new database. </solutions>
+            <hours_effort>5</hours_effort>
+        </component>
+        <component type="Map">
+            <contributor id="17026432"/>
+            <contributor id="15020942"/>
+            <contributor id="16020551"/>
+            <description> The map component required, two embedded maps displaying the twin cities of our choice. 
+                Each map required 6+ markers denoting places of interest in each of the twin cities. When these icons
+                ware moused over, a small description of the location is displayed. When clicked, more information, 
+                including a description, images, and a link to a relevant website is should be displayed.
+            </description>
+            <problems> To achieve the specification of the Map componnent of the group work, we had to integrate two maps from,
+                relevant mapping APIs. These would require interactive elements to enable the functionallity specified in the mouse over,
+                and click on actions. The data for these markers would have to be loaded from a database relating to the project.
+            </problems>
+            <solutions>We achieved the desired behaviour by implementing JavaScript  to embed the maps, and used Google Maps JavaScript
+                API to add the interactive elements to the maps of our twin cities. We used an asynchronously loaded php script to return the
+                contents of our MySql database, and used this result set to populate our infowindows behind each of the required mouse behviours.
+                These techniques combined with HTML and CSS to display and style the asthetics of our maps, allowed us to implement our
+                twin cities map component to spec.
+            </solutions>
+            <hours_effort>20</hours_effort>
+        </component>
+        <component type="Group Metafile Construction">
+            <contributor id="17026432"/>
+            <contributor id="15020942"/>
+            <contributor id="16020551"/>
+            <contributor id="16024424"/>
+            <description> For this we needed to write up an xml file containing information about each section of the project, the problems we 
+                encountered in each section and how we solved them. This also includes info on who contributed what and links to the main 
+                application and relevant files.
+            </description>
+            <problems> We encountered an issue where the component type for the XML config file section was incorrect and would not validate
+                with the schema.
+            </problems>
+            <solutions> We found that within the schema, this section has a space at the end, so we needed to add a space to the end of the type
+                in our file in order for it to validate.
+            </solutions>
+            <hours_effort>6</hours_effort>
+        </component>
+        <component type="RSS Feed">
+            <contributor id="17026432"/>
+            <description> In task 5 of the coursework specification, a valid RSS feed with all the current data from the
+                database had to be produced. The specification said that the feed would have to meet web standards 
+                RSS feeds, and be automatically generated. </description>
+            <problems> In order to generate a valid RSS feed the database relating to the twin cities would have to be 
+                queried to return a result set with the relevant information. This information then has to be 
+                formatted in a valid XML schema. Once the RSS is generated, it needs to be displayed on the 
+                twin cities website. </problems>
+            <solutions> To achieve the goals of the specification, I first had to establish a MYSQL connection with database
+                that would allow me to query the database for the appropriate information. Using PHP I parsed
+                the returned result set, formating it into a php string variable containing XML valid tags and 
+                formatting. This php string was echoed into the web site's html, formatted with some basic CSS styling.
+                Because the RSS was formatted as a valid XML string, the browser could render it without further processing.
+            </solutions>
+            <hours_effort>6</hours_effort>
+        </component>
+        <component type="Weather">
+            <contributor id="15020942"/>
+            <contributor id="17026432"/>
+            <description> The weather section of the specification required 2 graphical displays
+                of the weather forcast for the two cities</description>
+            <problems> To have the functioning weather forcasts meant we had to get the weather 
+                data for the 2 locations and display it.</problems>
+            <solutions> Initially the data was pulled from a weather API (Dark Sky) as a json file 
+                and was then decoded, this then required us to display the weather data clearly including 
+                displaying the correct icons. On further research revealed that Dark Sky supported use of a widget
+                that can uses a simple url to use and would provide us with all the details and formatting we required,
+                making it much easier</solutions>
+            <hours_effort>15</hours_effort>
+        </component>
+        <component type="XML Configuration File &amp; Schema ">
+            <contributor id="15020942"/>
+            <description> A configuration (config) file was required to store information such as api keys, longitude and latitude
+                of the cities and other important data</description>
+            <problems> A problem to overcome was to allow the data to be easily accessed by the other parts of the code.</problems>
+            <solutions> Initially we designed the config file in xml however after using it for a while we decided that
+                it would be better kept in a php file as most of our code was in php already. Therfore it would be easier
+                to just include that file.</solutions>
+            <hours_effort>4</hours_effort>
+        </component>
+        <component type="CSS Design">
+            <contributor id="15020942"/>
+            <contributor id="17026432"/>
+            <contributor id="16020551"/>
+            <description> The CSS design is used to make the webpage asthetically pleaseing and clear to read for the user</description>
+            <problems> A problem to overcome was with displaying 2 sets of data clearly and allow resizing of the page for 
+                different window sizese.</problems>
+            <solutions> Firstly, we decided to split the page into two columns wich would allow easy viewing. Also cards were
+                created to split up the different sections of the page. The colour was picked as it is a modern minimalist look.
+                Additionally when the window changes size the page will go from two columns to one column with the cards underneathe
+                eachother, making for easy use with smaller screens.
+            </solutions>
+            <hours_effort>4</hours_effort>
+        </component>
+        <component type="PHP Coding">
+            <contributor id="17026432"/>
+            <contributor id="15020942"/>
+            <contributor id="16020551"/>
+            <contributor id="16024424"/>
+            <description> Many of the components of the Twin Cities Project have to run on the back end of a web server,
+                in order to communicate with the database, handle get and post requests from the front end, and
+                connect to external APIs. </description>
+            <problems> In line with the requirements of the problem, a coding technology had to be used that could
+                run on the back end of our project. </problems>
+            <solutions> To fulfill the requirements of our system, our back end language of choice was PHP. Using PHP we
+                were able connect to our database, by executing MYSQL queries, return results from external APIs
+                , and format the data to be returned to the front end as required.
+            </solutions>
+            <hours_effort>40</hours_effort>
+        </component>
+        <component type="HTML Design &amp; Markup">
+            <contributor id="17026432"/>
+            <contributor id="15020942"/>
+            <contributor id="16020551"/>
+            <description> Our HTML like any other website is the main place as to what content will be displayed on the web 
+                page. As well as to connecting to external resources and linking to other of our files. </description>
+            <problems> Being a group project and a task bigger than what we have ever faced we were challenged to deliver a
+                project that had a lot of content and features. But not all content was initially displayed within HTML as
+                there was other functionality down in other files which would then be brought to the HTML.  </problems>
+            <solutions> By having a well thought out and organised semantic HTML, as well as taking advantage over newly 
+                introduced HTML5 tags we gave and sectioned the page in an fashionable manner to the user and to us developers. 
+                The HTML has numerous tags to be able to layout the page in a clean manner by keeping consistency with the style 
+                and the way content and features are delivered. 
+            </solutions>
+            <hours_effort>15</hours_effort>
+        </component>
+        <component type="Javascript / JSON Coding">
+            <contributor id="17026432"/>
+            <contributor id="15020942"/>
+            <contributor id="16020551"/>
+            <description> With the use of JavaScript we were able to give dynamic features to our webpage to provide the users 
+                with a more pleasing experience.
+            </description>
+            <problems> Javascript being one of the most challenging parts of Web Development, we faced challenges from syntax 
+                to learning new technologies to be able to implement desired features to satisfy the specification.   
+            </problems>
+            <solutions> As mentioned one of the solutions we would implement is by learning new JavaScript libraries, such as 
+                jQuery, and APIs to work alongside with Javascript. Using different Javascript methodologies we were able to 
+                deliver a well dynamic web page.
+            </solutions>
+            <hours_effort>10</hours_effort>
+        </component>
+        <component type="XML Markup">
+            <contributor id="17026432"/>
+            <contributor id="15020942"/>
+            <contributor id="16020551"/>
+            <description> Within our webpage we used XML to be able to give functionality for back-end features, main usage of 
+                XML was to pass data from the database to the webpage or back-end.
+            </description>
+            <problems> Difficulty creating the Syntax of the XML within PHP and then having to manipulate the XML with other
+                parts of the program. 
+            </problems>
+            <solutions> With time, patience and reading up on how to work XML we were able to finally get it working with features
+                within the program and then either displaying it or using its content with other parts of the back end process. 
+            </solutions>
+            <hours_effort>6</hours_effort>
+        </component>
+    </group>
+
+
+    <!-- This section gives a link to group components, lists the techohnolgies used and 
+        points to any number of source files. Note that the more that these links work - 
+        the higher the mark for this section. Of course - the base_url link must work!! -->
+    <application>
+        <!-- Make sure the base_url for the main application is reachable as 
+            http://www.cems.uwe.ac.uk/~a-student/dsa/assignment/ -->
+        <base_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/index.php</base_url>
+        <!-- a list of up to 8 technologies used (see schema) -->
+        <technologies>
+            <tech>php</tech>
+            <tech>xml</tech>
+            <tech>html5</tech>
+            <tech>css</tech>
+            <tech>javascript</tech>
+            <tech>json</tech>
+            <tech>mysql</tech>
+            <tech>sql</tech>
+        </technologies>
+        <config_file>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/config.phps</config_file>
+        <!-- URL of the Data Model - could be a HTML page with an image file or a gif/png file-->
+        <dm_source>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/database/ConceptualERModel.png</dm_source>
+        <source_files>
+            <file>
+                <name>index.php</name>
+                <purpose>main application file</purpose>
+                <!-- source file should in a browser viewable format (e.g .phps, .xml, .txt, etc.) -->
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/index.phps</source_url>
+            </file>
+            
+            <file>
+                <name>create_database.sql</name>
+                <purpose>sql file to populate database</purpose>
+                <!-- source file should in a browser viewable format (e.g .phps, .xml, .txt, etc.) -->
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/database/create_database.txt</source_url>
+            </file>
+            
+            <file>
+                <name>config.php</name>
+                <purpose>php file holding config variables</purpose>
+                <!-- source file should in a browser viewable format (e.g .phps, .xml, .txt, etc.) -->
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/config.phps</source_url>
+            </file>
+            
+            <file>
+                <name>index.js</name>
+                <purpose>javascript file holding main js functions</purpose>
+                <!-- source file should in a browser viewable format (e.g .phps, .xml, .txt, etc.) -->
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/index.txt</source_url>
+            </file>
+            
+            <file>
+                <name>main.css</name>
+                <purpose>styling sheet for main application</purpose>
+                <!-- source file should in a browser viewable format (e.g .phps, .xml, .txt, etc.) -->
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/main.txt</source_url>
+            </file>
+            
+            <file>
+                <name>getvars.php</name>
+                <purpose>php file to queary db</purpose>
+                <!-- source file should in a browser viewable format (e.g .phps, .xml, .txt, etc.) -->
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/getvars.phps</source_url>
+            </file>
+            
+            <file>
+                <name>rss.php</name>
+                <purpose>main application file</purpose>
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/rssfeed/rss.phps</source_url>
+            </file>
+
+        </source_files>
+    </application>
+    
+    <overall_comments> 
+        Twin Cities was an interesting and useful excercise that taught us the core technologies behind web 2.0. Aside from 
+        learning the languages of HTML5, XML, PHP, JavaScript, and SQL in the context of developing a website, we learned valuable 
+        skills working with APIs and web developement software packages. 
+    </overall_comments>
+</group_metafile>
+

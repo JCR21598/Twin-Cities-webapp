@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<individual_metafile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="http://www.cems.uwe.ac.uk/~p-chatterjee/2018-19/modules/dsa/assignment/individual_handin_schema.xsd">
+
+    <group id="H"/>
+    <student id="16020551"/>
+    
+    <!-- My individual component -->
+    <component type="Application Refactoring to SPA">
+        <description>
+            After initial load of the web page the weather and map have little contact with the server. Any need
+            of contact is mainly to the database and its to be able to retrieve information and then display it in an
+            asynchronously manner to the webpage. Expanding on that point there are two types of markers, one for the points
+            of interest of th city and another for the weather at the city at that time. When over the point of interest
+            marker it displays a small window of information but once clicked it demonstrates a larger description of the location.
+        </description>
+        <problems>
+            Main diffculty within my individual part was the implementation of AJAX, as it is a more advanced topic within
+            the web development spectrum. It required a lot of time, learning and mistakes to be able to accomplish
+            what I required. This was complicated even more when having to deal with so many things, such as getting the
+            data from database then converting it and then passing it to the AJAX function and finally adding the features
+            within the website. Additionally, by making the website a single page application did not make it easier as typically
+            you would want to load another page for other tasks/content, causing then think more meticulously on how to implement
+            the features.
+        </problems>
+        <solutions>
+            To achieve the specification, basically not having to reload the page again after once loaded, AJAX was my main
+            tool and friend as it would perform little calls to the server but it would still give the user the feeling
+            that the page doesnt need to be loaded.
+            
+            As mentioned AJAX was the main way to perfrom my individual part, that being through just vanilla javascript or
+            using other libraries, such as jQuery to be able to help me (although I do acknowledge that using jQuery for
+            AJAX is kind of an overkill and does have other features that could be more useful, nonetheless it was very
+            helpful). AJAX was used to be able to display components from the database and to be able to change the weather
+            markers on the map.
+            
+            To be able to retrieve data from the database php was needed, this data was then formatted into XML as I believed
+            it would be easy to manage and update (we did chnage the database a couple of times so this was handy as only
+            few lines of code would need to be added or removed). A combination of AJAX, XML and google maps API was then
+            used to be able display information within the maps. CSS also was very helpful as it provided styles to avoid
+            having to reload the webpage but still giving a good experience.
+        </solutions>
+        <hours_effort> 25 </hours_effort>
+        <!-- This should be an URL to the working component - maybe part of the base page -->
+        <base_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/index.php</base_url>
+        <technologies>
+            <tech>php</tech>
+            <tech>javascript</tech>
+            <tech>html5</tech>
+            <tech>css</tech>
+            <tech>xml</tech>
+            <tech>other</tech>
+        </technologies>
+        <source_files>
+            <file>
+                <name>index.js</name>
+                <purpose>has several functions for the functionality of webpage, such as AJAX</purpose>
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/index.js</source_url>
+            </file>
+            <file>
+                <name>getvars.php</name>
+                <purpose>has back end functionality, for instance connecting to database and converting to XML</purpose>
+                <source_url>http://isa.cems.uwe.ac.uk/~ta2-meier/dsa/assignment/getvars.phps</source_url>
+            </file>
+        </source_files>
+    </component>
+    <individual_comment>
+        This was a complex individual part but in the end I learnt a lot and even though it might not be perfect it was still enjoyable to
+        implement it and work as a team. A just wished didnt have so many deadlines so close together so I could have probably spent more
+        time on it but nevertheless it was a fantastic challenging coursework.
+    </individual_comment>
+</individual_metafile>
+
